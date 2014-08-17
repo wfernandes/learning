@@ -5,7 +5,9 @@ app.AppView = Backbone.View.extend({
 	el: "#content",
 	
 	events: {
-		'click .btn.btn-default.add-result': 'addNewResult'
+		'click .btn.btn-default.add-result': 'addNewResult',
+		'keypress #new-name': 'addNewResult',
+		'keypress #new-score': 'addNewResult'
 	},
 	
 	initialize: function(){
@@ -22,7 +24,11 @@ app.AppView = Backbone.View.extend({
 	},
 	
 	addNewResult: function(e){
-		e.stopPropagation();
+		
+		// Only listen to the keypress event from enter to add new result
+		if(e.type == "keypress" && e.which != ENTER_KEY){
+			return;
+		}
 		
 		var studentName = $("#new-name").val();
 		var studentScore = $("#new-score").val();

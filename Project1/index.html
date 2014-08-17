@@ -24,12 +24,11 @@
 				<div class="col-md-2"></div>
 				<div class="col-md-10">
 					<div class="form-inline">
-						
-								<input id="new-name" class="form-control" type="text" placeholder="Student Name"></input>
-						
-								<input id="new-score" class="form-control" type="text" placeholder="Score"></input>
-						
-						
+					
+						<input id="new-name" class="form-control" type="text" placeholder="Student Name"></input>
+					
+						<input id="new-score" class="form-control" type="text" placeholder="Score"></input>
+					
 						<button id="add-result" class="btn btn-default add-result"><span class="glyphicon glyphicon-ok"></span> Add</button>
 						
 						<span id="msg" class="help-inline"></span>
@@ -59,8 +58,7 @@
 	</div>
 	
 	
-	<!-- Latest compiled and minified JavaScript -->
-	
+	<!-- Row view template -->
 	<script type="text/template" id="row-template">
 		<div>
 			<div class="result">
@@ -73,6 +71,7 @@
 		</div>
 	</script>	
 	
+	<!-- Stats template -->
 	<script type="text/template" id="stats-template">
 		<div class="panel panel-danger">
 			<div class="panel-heading">
@@ -98,6 +97,15 @@
 			</div>
 			<div class="panel-body">
 				<%- avg %>
+			</div>
+		</div>
+		
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Count</h3>
+			</div>
+			<div class="panel-body">
+				<%- count %>
 			</div>
 		</div>
 				

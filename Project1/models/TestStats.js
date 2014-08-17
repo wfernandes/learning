@@ -7,7 +7,8 @@ app.TestStats = Backbone.Model.extend({
 		min: 0,
 		maxName: '',
 		max: 0,
-		avg: 0
+		avg: 0,
+		count:0
 	}
 	
 });

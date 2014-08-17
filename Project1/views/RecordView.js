@@ -97,6 +97,7 @@ app.RecordView = Backbone.View.extend({
 		}else{
 			this.$el.find('#row-msg').text('');
 		}
+		this.disableEditing();
 		
 	},
 	
