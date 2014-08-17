@@ -3,46 +3,104 @@
 
 <head>
 	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
 	<title>LogRhythm Project</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">	
 	<link rel="stylesheet" type="text/css" href="css/styles.css"></link>
 </head>
 
 <body>	
 
-	<header>
-		<h1> Test Results</h1>
+	<div class="container">
+
+
+
+	<header class="page-header">
+		<h1> Test Results <small>LogRhythm project</small></h1>
 	</header>
-	<section id="content">
-		<input id="new-name" type="text" placeholder="Student Name"></input>
-		<input id="new-score" type="text" placeholder="Score"></input>
-		<button id="add-result">Add Result</button>
-		<label id="msg"></label>
-		<ul id="results">
-		</ul>
-	</section>
-	<footer id="footer">
+	
+	<div class="row">
+	  <div class="col-md-2"></div>
+	  <div class="col-md-6">
+	  		
+		<section id="content">
+			<form class="form-inline" role="form">
+				<div class="form-group">
+						<input id="new-name" class="form-control" type="text" placeholder="Student Name"></input>
+				</div>
+				
+				<div class="form-group">
+						<input id="new-score" class="form-control" type="text" placeholder="Score"></input>
+				</div>
+				
+				
+				<button id="add-result" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Add</button>
+				
+				<label id="msg"></label>
+			</form>
+			
+			<ul id="results">
+			</ul>
+		</section>
 		
-	</footer>
+	  </div>
+	  <div class="col-md-4">
+		<footer id="footer"></footer>	  
+	  </div>
+	  
+	</div>
 	
 	
 	
+	<!-- End of container -->
+	</div>
+	
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/template" id="row-template">
 		<div>
-			<div class="row">
+			<div class="result">
 				<input type="text" value = "<%- name %>" class="name" disabled></input>
 				<input type="text" value = "<%- score %>" class="score" disabled></input>				
 			</div>
-			<button class="remove">Remove</button>
+			<button class=" btn btn-default remove"><span class="glyphicon glyphicon-remove-circle"></span> Remove</button>
+			
 			<label id="row-msg"></label>
 		</div>
 	</script>	
 	
 	<script type="text/template" id="stats-template">
-		<div class="stats">
-			<label>Min: <%- min %></label>
-			<label>Max: <%- max %></label>
-			<label>Avg: <%- avg %></label>
+		<div class="panel panel-danger">
+			<div class="panel-heading">
+				<h3 class="panel-title">Min</h3>
+			</div>
+			<div class="panel-body">
+				<%- min %>
+			</div>
 		</div>
+		
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<h3 class="panel-title">Max</h3>
+			</div>
+			<div class="panel-body">
+				<%- max %>
+			</div>
+		</div>
+		
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Avg</h3>
+			</div>
+			<div class="panel-body">
+				<%- avg %>
+			</div>
+		</div>
+				
 	</script>
 	
 	

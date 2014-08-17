@@ -11,9 +11,9 @@ app.RecordView = Backbone.View.extend({
 	
 	events: {
 		'click .remove': 'removeResult',
-		'dblclick .row': 'enableEditing',
-		'keypress .row': 'updateModel',
-		'keydown .row': 'revertModel',
+		'dblclick .result': 'enableEditing',
+		'keypress .result': 'updateModel',
+		'keydown .result': 'revertModel',
 		'focusout input.name': 'disableEditing',
 		'focusout input.score': 'disableEditing'
 		
@@ -38,9 +38,9 @@ app.RecordView = Backbone.View.extend({
 	
 	highlightIfFailed: function(){
 		if(this.model.get('score') < 65){
-			this.$el.find('.row').addClass("fail")
+			this.$el.find('.result').addClass("fail")
 		}else{
-			this.$el.find('.row').removeClass("fail")
+			this.$el.find('.result').removeClass("fail")
 		}
 	},
 	
@@ -56,7 +56,7 @@ app.RecordView = Backbone.View.extend({
 		
 		this.getOldValues();
 		
-		this.$el.find('.row').addClass('editing');
+		this.$el.find('.result').addClass('editing');
 		var inputs = this.$el.find("input");
 		
 		for(var i = 0; i<inputs.length; i++){
@@ -66,7 +66,7 @@ app.RecordView = Backbone.View.extend({
 	
 	disableEditing: function(e){
 		console.log("***Disable editing.....",e);
-		this.$el.find('.row').removeClass('editing');
+		this.$el.find('.result').removeClass('editing');
 		var inputs = this.$el.find("input");
 		
 		for(var i = 0; i<inputs.length; i++){

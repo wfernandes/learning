@@ -1,20 +1,33 @@
 
-div.row {
+div.result {
 	display: inline;
 }
 
-div.row input{
+div.result input{
 	background:none;
 	border: none;
 }
 
 
-div.row.editing input{	
+div.result.editing input{	
 	background: white;
 	border: 2px inset;
 }
 
-div.row.fail{	
+div.result.fail{	
 	background-color: lightpink;
 }
 
+ul{
+	list-style-type: none;
+	padding: 0px;
+}
+
+ul li {
+	padding-top:5px;	
+}
+
+li:first-child{
+	margin-top:10px;
+}
+ 
