@@ -12,8 +12,8 @@ app.RecordView = Backbone.View.extend({
 	events: {
 		'click .remove': 'removeResult',
 		'dblclick .result': 'enableEditing',
-		'keypress .result': 'updateModel',
-		'keydown .result': 'revertModel',
+		'keypress .result': 'handleKeyEvent',
+		'keydown .result': 'handleKeyEvent',
 		'focusout input.name': 'disableEditing',
 		'focusout input.score': 'disableEditing'
 		
@@ -76,26 +76,37 @@ app.RecordView = Backbone.View.extend({
 		this.clearOldValues();
 	},
 	
-	updateModel: function(e){
+	handleKeyEvent: function(e){
 		if(e.which == ENTER_KEY){
-			var name = this.$el.find('input.name')[0].value.trim();
-			var score = this.$el.find('input.score')[0].value.trim();
-			var res = this.model.save({name: name, score: score});
-			
-			if(!res){
-				this.$el.find('#row-msg').text(this.model.validationError);
-			}else{
-				this.$el.find('#row-msg').text('');
-			}
+			console.log("ENTER KEY HIT....")
+			this.updateModel()
+		}else if(e.which == ESC_KEY){
+			console.log("ESC KEY HIT....")
+			this.revertModel();
 		}
 		
 	},
 	
-	revertModel: function(e){
-		if(e.which == ESC_KEY){
-			this.model.set('name', this.oldName);
-			this.model.set('score', this.oldScore);
+	updateModel: function(){
+		var name = this.$el.find('input.name')[0].value.trim();
+		var score = this.$el.find('input.score')[0].value.trim();
+		var res = this.model.save({name: name, score: score});
+		
+		if(!res){
+			this.$el.find('#row-msg').text(this.model.validationError);
+		}else{
+			this.$el.find('#row-msg').text('');
 		}
+		
+	},
+	
+	revertModel: function(){
+		this.model.set('name', this.oldName);
+		this.model.set('score', this.oldScore);
+		// This will trigger the collection change and re-render
+		this.model.trigger('change');
+		
+		this.disableEditing();
 	},
 	
 	getOldValues: function(){
