@@ -15,44 +15,44 @@
 <body>	
 
 	<div class="container">
-
-
-
-	<header class="page-header">
-		<h1> Test Results <small>LogRhythm project</small></h1>
-	</header>
-	
-	<div class="row">
-	  <div class="col-md-2"></div>
-	  <div class="col-md-6">
-	  		
-		<section id="content">
-			<form class="form-inline" role="form">
-				<div class="form-group">
-						<input id="new-name" class="form-control" type="text" placeholder="Student Name"></input>
-				</div>
-				
-				<div class="form-group">
-						<input id="new-score" class="form-control" type="text" placeholder="Score"></input>
-				</div>
-				
-				
-				<button id="add-result" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Add</button>
-				
-				<label id="msg"></label>
-			</form>
-			
-			<ul id="results">
-			</ul>
-		</section>
+		<header class="page-header">
+			<h1> Test Results <small>LogRhythm project</small></h1>
+		</header>
 		
-	  </div>
-	  <div class="col-md-4">
-		<footer id="footer"></footer>	  
-	  </div>
-	  
-	</div>
-	
+		<div id="content">
+			<div class="row add-record-row">
+				<div class="col-md-2"></div>
+				<div class="col-md-10">
+					<div class="form-inline">
+						
+								<input id="new-name" class="form-control" type="text" placeholder="Student Name"></input>
+						
+								<input id="new-score" class="form-control" type="text" placeholder="Score"></input>
+						
+						
+						<button id="add-result" class="btn btn-default add-result"><span class="glyphicon glyphicon-ok"></span> Add</button>
+						
+						<span id="msg" class="help-inline"></span>
+					</div>
+				</div>
+			</div>
+		
+		
+			<div class="row">
+				<div class="col-md-2"></div>
+					<div class="col-md-6">
+						<div>					
+							<ul id="results">
+							</ul>
+						</div>
+
+					</div>
+						<div class="col-md-4">
+						<div id="sidebar"></div>
+				</div>
+			  
+			</div>
+		</div>
 	
 	
 	<!-- End of container -->
@@ -60,7 +60,7 @@
 	
 	
 	<!-- Latest compiled and minified JavaScript -->
-	<script type="text/javascript" src="js/bootstrap.js"></script>
+	
 	<script type="text/template" id="row-template">
 		<div>
 			<div class="result">
@@ -69,7 +69,7 @@
 			</div>
 			<button class=" btn btn-default remove"><span class="glyphicon glyphicon-remove-circle"></span> Remove</button>
 			
-			<label id="row-msg"></label>
+			<span id="row-msg" class="help-inline"></span>
 		</div>
 	</script>	
 	
@@ -79,7 +79,7 @@
 				<h3 class="panel-title">Min</h3>
 			</div>
 			<div class="panel-body">
-				<%- min %>
+				<%- minName %>, <%- min %>
 			</div>
 		</div>
 		
@@ -88,7 +88,7 @@
 				<h3 class="panel-title">Max</h3>
 			</div>
 			<div class="panel-body">
-				<%- max %>
+				<%- maxName %>, <%- max %>
 			</div>
 		</div>
 		
@@ -105,6 +105,7 @@
 	
 	
 	<script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/underscore.js"></script>	
 	<script type="text/javascript" src="js/backbone.js"></script>
 	<script type="text/javascript" src="js/backbone.localStorage.js"></script>

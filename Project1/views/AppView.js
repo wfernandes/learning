@@ -5,7 +5,7 @@ app.AppView = Backbone.View.extend({
 	el: "#content",
 	
 	events: {
-		'click #add-result': 'addNewResult'
+		'click .btn.btn-default.add-result': 'addNewResult'
 	},
 	
 	initialize: function(){
@@ -18,9 +18,7 @@ app.AppView = Backbone.View.extend({
 	},
 	
 	render: function(){
-		
 		new app.StatsView( {model: new app.TestStats()});
-		//$(this.el).append("<p>Making changes</p>");
 	},
 	
 	addNewResult: function(e){
@@ -42,7 +40,6 @@ app.AppView = Backbone.View.extend({
 		
 		
 		this.clearAddInputs();
-		console.log("Adding new result");
 	},
 	
 	addStudentResult: function(result){

@@ -1,4 +1,12 @@
 
+.help-inline{
+	color: #a94442;
+}
+
+.add-record-row{
+	margin-bottom: 15px;
+}
+
 div.result {
 	display: inline;
 }
@@ -14,8 +22,12 @@ div.result.editing input{
 	border: 2px inset;
 }
 
-div.result.fail{	
-	background-color: lightpink;
+.result.fail input{	
+	color: #a94442;	
+}
+
+.remove{
+	margin-left: 26px;
 }
 
 ul{
@@ -27,7 +39,5 @@ ul li {
 	padding-top:5px;	
 }
 
-li:first-child{
-	margin-top:10px;
-}
+
  
