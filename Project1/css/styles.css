@@ -1,0 +1,14 @@
+
+div.row div {
+	display: inline;
+}
+
+div.row.fail div{
+	
+	background-color: lightpink;
+}
+
+input.name, input.score {
+	background:none;
+	border: none;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>LogRhythm Project</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css"></link>
+</head>
+
+<body>	
+
+	<header>
+		<h1> Test Results</h1>
+	</header>
+	<section id="content">
+		<input id="new-name" type="text" placeholder="Student Name"></input>
+		<input id="new-score" type="text" placeholder="Score"></input>
+		<button id="add-result">Add Result</button>
+		<label id="msg"></label>
+		<ul id="results">
+		</ul>
+	</section>
+	<footer id="footer">
+		
+	</footer>
+	
+	
+	
+	<script type="text/template" id="row-template">
+		<div class="row">
+			<div>
+				<input type="text" value = "<%- name %>" class="name" disabled></input>
+				<input type="text" value = "<%- score %>" class="score" disabled></input>				
+			</div>
+			<button class="remove">Remove</button>
+		</div>
+	</script>	
+	
+	<script type="text/template" id="stats-template">
+		<div class="stats">
+			<label>Min: <%- min %></label>
+			<label>Max: <%- max %></label>
+			<label>Avg: <%- avg %></label>
+		</div>
+	</script>
+	
+	
+	<script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+	<script type="text/javascript" src="js/underscore.js"></script>	
+	<script type="text/javascript" src="js/backbone.js"></script>
+	<script type="text/javascript" src="js/backbone.localStorage.js"></script>
+	<script type="text/javascript" src="models/TestStats.js"></script>
+	<script type="text/javascript" src="models/StudentResult.js"></script>
+	<script type="text/javascript" src="models/StudentResultCollection.js"></script>
+	<script type="text/javascript" src="views/StatsView.js"></script>
+	<script type="text/javascript" src="views/AppView.js"></script>
+	<script type="text/javascript" src="views/RecordView.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	
+</body>
+
+</html>
