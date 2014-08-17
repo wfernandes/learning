@@ -1,14 +1,20 @@
 
-div.row div {
+div.row {
 	display: inline;
 }
 
-div.row.fail div{
-	
-	background-color: lightpink;
-}
-
-input.name, input.score {
+div.row input{
 	background:none;
 	border: none;
 }
+
+
+div.row.editing input{	
+	background: white;
+	border: 2px inset;
+}
+
+div.row.fail{	
+	background-color: lightpink;
+}
+

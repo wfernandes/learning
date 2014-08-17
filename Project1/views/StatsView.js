@@ -10,6 +10,7 @@ app.StatsView = Backbone.View.extend({
 		console.log("*********INITIALIZING STATS VIEW....")
 		this.listenTo(app.StudentResultCollection, 'add', this.calculateStats);
 		this.listenTo(app.StudentResultCollection, 'remove', this.calculateStats);
+		this.listenTo(app.StudentResultCollection, 'change', this.calculateStats);
 		// run this the first time
 		this.calculateStats();
 	},
