@@ -44,14 +44,17 @@ app.StatsView = Backbone.View.extend({
 			}
 		});
 	
-		// TODO: Check output value for edge cases
-		var avg = sum/app.StudentResultCollection.length;
+        if(sum > 0){
+            var avg = sum/app.StudentResultCollection.length;
+            this.model.set('avg', avg.toFixed(2)); // Just want 2 decimal places at most        
+        }
+        if(min){
+            this.model.set('min', min);        
+        }
+        if(max){
+            this.model.set('max', max);        
+        }
 		
-		this.model.set('minName', minName);
-		this.model.set('min', min);
-		this.model.set('maxName', maxName);
-		this.model.set('max', max);
-		this.model.set('avg', avg.toFixed(2)); // Just want 2 decimal places at most
 		this.model.set('count', app.StudentResultCollection.length);
 		this.render();
 	},

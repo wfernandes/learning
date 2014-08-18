@@ -49,7 +49,6 @@ app.AppView = Backbone.View.extend({
 	},
 	
 	addStudentResult: function(result){
-		console.log("Addding a student result...", result.validationError)
 		if(!result.validationError){
 			var studentRecordView = new app.RecordView({model: result});
 			this.$("#results").append(studentRecordView.render().el);
