@@ -14,8 +14,8 @@ app.RecordView = Backbone.View.extend({
 		'dblclick .result': 'enableEditing',
 		'keypress .result': 'handleKeyEvent',
 		'keydown .result': 'handleKeyEvent',
-		'focusout input.name': 'disableEditing',
-		'focusout input.score': 'disableEditing'		
+		'focusout input.name': 'updateModel',
+		'focusout input.score': 'updateModel'		
 	},
 	
 	initialize: function(){
