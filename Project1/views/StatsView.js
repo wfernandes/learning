@@ -33,11 +33,9 @@ app.StatsView = Backbone.View.extend({
 				
 				if(score <= min){
 					min = score;
-					minName = result.get('name');
 				}
 				if(score >= max){
 					max = score;
-					maxName = result.get('name');
 				}
 				
 				sum += score;				
