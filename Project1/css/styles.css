@@ -1,6 +1,8 @@
 
-.help-inline{
+
+.help-error{
 	color: #a94442;
+	font-size: small;
 }
 
 .add-record-row{

@@ -15,8 +15,7 @@ app.RecordView = Backbone.View.extend({
 		'keypress .result': 'handleKeyEvent',
 		'keydown .result': 'handleKeyEvent',
 		'focusout input.name': 'disableEditing',
-		'focusout input.score': 'disableEditing'
-		
+		'focusout input.score': 'disableEditing'		
 	},
 	
 	initialize: function(){
@@ -85,9 +84,8 @@ app.RecordView = Backbone.View.extend({
 			this.$el.find('#row-msg').text(this.model.validationError);
 		}else{
 			this.$el.find('#row-msg').text('');
-		}
-		this.disableEditing();
-		
+            this.disableEditing();
+		}		
 	},
 	
 	revertModel: function(){

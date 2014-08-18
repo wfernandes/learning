@@ -20,6 +20,8 @@ app.AppView = Backbone.View.extend({
 	
 	render: function(){
 		new app.StatsView( {model: new app.TestStats()});
+        
+        return this;
 	},
 	
 	addNewResult: function(e){
@@ -40,11 +42,9 @@ app.AppView = Backbone.View.extend({
 		if(rec.validationError){
 			this.$("#msg").text(rec.validationError);
 		}else{
-			this.$("#msg").text('')
-		}
-		
-		
-		this.clearAddInputs();
+			this.$("#msg").text('');
+            this.clearAddInputs();
+		}	
 	},
 	
 	addStudentResult: function(result){

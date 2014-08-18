@@ -38,8 +38,15 @@ describe("Student Result Collection" , function(){
         expect(res.validationError).toEqual('Student score must be a number');
         
         res = app.StudentResultCollection.create({name: "Zoe Saldana", score:"99.9"});
+        expect(res.validationError).toEqual(null);
+        expect(res.get('name')).toEqual('Zoe Saldana');
+        expect(res.get('score')).toEqual('99.9');
     });
     
-
+     it("should validate that score cannot be negative", function(){
+        var res = app.StudentResultCollection.create({name: "Pearl Jam", score:"-99"}, {wait: true});
+        expect(res.validationError).toEqual('Student score must not be negative');
+        
+    });
 
 });
