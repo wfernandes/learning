@@ -9,7 +9,7 @@
 	<title>LogRhythm Project</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">	
-	<link rel="stylesheet" type="text/css" href="css/styles.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 
 <body>	
@@ -30,22 +30,45 @@
 						<span id="msg" class="help-inline help-error"></span>
 					</div>
 				</div>
-			</div>		
+			</div>
+		
 		
 			<div class="row">
 				<div class="col-md-2"></div>
-				<div class="col-md-6">
-					<div>					
-						<ul id="results">
-						</ul>
+					<div class="col-md-6">
+						<div>					
+							<ul id="results">
+							</ul>
+						</div>
 					</div>
-				</div>
-				<div class="col-md-4">
-					<div id="sidebar"></div>
-				</div>			  
+					<div class="col-md-4">
+						<div id="sidebar"></div>
+					</div>			  
 			</div>
 		</div>
-	
+		<footer>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Notes</h3>
+				</div>
+				<div class="panel-body">
+					<p>To enter a new record. Enter student name and score. Press Enter or Click Add. Scores must be numerical and greater than 0.</p>
+					
+					<p>
+						To edit an existing record, double click on the row.
+						Make change.
+						Press Enter to persist the change.
+						Press Esc to revert the change.
+					</p>
+					<p>
+						Validation error msgs are displayed near the offending row or near the add btn when adding new records.
+					</p>
+					<p>
+						Scores below 65 are highlighted in red.
+					</p>
+				</div>
+			</div>
+		</footer>
 	
 	<!-- End of container -->
 	</div>
