@@ -6,6 +6,7 @@ StudentResultCollection = Backbone.Collection.extend({
 	
 	comparator: 'score',
 	
+	// Using Backbone.LocalStorage as persistence
 	localStorage: new Backbone.LocalStorage('results-backbone')
 	
 });
