@@ -22,13 +22,10 @@ app.RecordView = Backbone.View.extend({
 	initialize: function(){
 		this.listenTo(this.model, 'change', this.render);
 		this.listenTo(this.model, 'destroy', this.remove);
-		_.bindAll(this, 'updateModel');
-		console.log("RecordView initialized");
-		
+		_.bindAll(this, 'updateModel');		
 	},
 	
 	render: function(){
-		console.log("rendering a record view....");
 		this.$el.html(this.template(this.model.toJSON()));
 		
 		this.highlightIfFailed();
@@ -45,15 +42,10 @@ app.RecordView = Backbone.View.extend({
 	},
 	
 	removeResult: function(){
-		console.log("before coll length...", app.StudentResultCollection.length)
-		this.model.destroy();
-		console.log("after coll length...", app.StudentResultCollection.length)
-		
+		this.model.destroy();		
 	},
 	
-	enableEditing: function(e){
-		console.log("Editing the model....", this.$el.find("input"));
-		
+	enableEditing: function(e){		
 		this.getOldValues();
 		
 		this.$el.find('.result').addClass('editing');
@@ -65,7 +57,6 @@ app.RecordView = Backbone.View.extend({
 	},
 	
 	disableEditing: function(e){
-		console.log("***Disable editing.....",e);
 		this.$el.find('.result').removeClass('editing');
 		var inputs = this.$el.find("input");
 		
@@ -78,10 +69,8 @@ app.RecordView = Backbone.View.extend({
 	
 	handleKeyEvent: function(e){
 		if(e.which == ENTER_KEY){
-			console.log("ENTER KEY HIT....")
 			this.updateModel()
 		}else if(e.which == ESC_KEY){
-			console.log("ESC KEY HIT....")
 			this.revertModel();
 		}
 		

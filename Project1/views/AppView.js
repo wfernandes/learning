@@ -11,7 +11,6 @@ app.AppView = Backbone.View.extend({
 	},
 	
 	initialize: function(){
-		console.log("AppView initialized");
 		_.bindAll(this, 'render');
 		
 		this.listenTo(app.StudentResultCollection, 'add', this.addStudentResult)
